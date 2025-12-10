@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Contemporary News – Frontend
 
-## Getting Started
+BBC/CNN-inspired news experience with a Material-tinted palette. Public reader site plus `/admin` CMS, wired to the backoffice APIs (`/api/v1`) hosted at `backoffice.thecontemporary.news`.
 
-First, run the development server:
+## Stack
+- Next.js 16 (App Router), React 19
+- Tailwind CSS v4
+- @tanstack/react-query for data + caching
+- Next fonts: Playfair Display (headlines) + Work Sans (body)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Environment
+Create a `.env.local` or export the following:
+
+```
+NEXT_PUBLIC_API_BASE=https://backoffice.thecontemporary.news
+FRONTEND_URL=http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run locally
+```bash
+pnpm install
+pnpm dev
+# build / lint
+pnpm build
+pnpm lint
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
+- `src/app/(public)`: reader-facing routes (home, article, category, search, auth, profile)
+- `src/app/(admin)/admin`: protected backoffice (dashboard, articles, categories, ads, media, users, settings)
+- `src/components`: shared layout, news cards, ads, UI primitives
+- `src/hooks/api-hooks.ts`: API query/mutation hooks against `/api/v1` endpoints with graceful fallbacks
+- `src/lib/api-client.ts`: fetch client with token + refresh handling
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+- Theme toggle (light/dark) plus language toggle (EN/BN placeholder) in header.
+- Ads consume `/advertisements/active` and track impressions/clicks; placeholders render if offline.
+- Forms in admin call respective endpoints (`/articles`, `/categories`, `/advertisements`, `/users`, `/media/upload`).
+- Reader/auth flows hit `/auth/login`, `/auth/register`, `/auth/me`, `/auth/change-password`, `/auth/profile` via shared client.
