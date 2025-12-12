@@ -18,37 +18,58 @@ import { EmptyState } from '@/components/states/EmptyState';
 import { useArticle, useRelatedArticles } from '@/hooks/api-hooks';
 import { useLanguage } from '@/contexts/language-context';
 import { formatDate, getLocalizedText } from '@/lib/utils';
+import {
+  getArticleBySlug,
+  getArticlesByCategory,
+  PLACEHOLDER_ARTICLES,
+} from '@/lib/placeholder-data';
 
 export default function ArticlePage() {
   const params = useParams<{ slug: string }>();
   const slug = params?.slug as string;
   const { data: article } = useArticle(slug);
-  const categoryIdForRelated = article?.categoryId;
+
+  // Use placeholder data as fallback
+  const placeholderArticle = getArticleBySlug(slug);
+  const displayArticle = article || placeholderArticle;
+
+  const categoryIdForRelated = displayArticle?.categoryId;
   const { data: related } = useRelatedArticles(categoryIdForRelated);
   const { language } = useLanguage();
   const [lang, setLang] = useState<'en' | 'bn'>('en');
   const [readingMode, setReadingMode] = useState(false);
   const [largeText, setLargeText] = useState(false);
   const theme = useTheme();
-  const displayArticle = article;
+
+  // Get related articles from API or use placeholder data
+  const placeholderRelated = displayArticle?.category?.slug
+    ? getArticlesByCategory(displayArticle.category.slug)
+        .filter((a) => a.slug !== slug)
+        .slice(0, 4)
+    : PLACEHOLDER_ARTICLES.filter((a) => a.slug !== slug).slice(0, 4);
+
   const relatedStories =
     related && related.length > 0 && displayArticle
       ? related.filter((item) => item.id !== displayArticle.id).slice(0, 4)
-      : [];
-  const categoryLabel = displayArticle ? getLocalizedText(displayArticle.category?.name, language) || 'News' : 'News';
+      : placeholderRelated;
+  const categoryLabel = displayArticle
+    ? getLocalizedText(displayArticle.category?.name, language) || 'News'
+    : 'News';
   const title = displayArticle ? getLocalizedText(displayArticle.title, language) : '';
   const summary = displayArticle ? getLocalizedText(displayArticle.excerpt, language) : '';
   const featuredImage = displayArticle?.featuredImage?.url || displayArticle?.coverImage;
-  const featuredAlt = displayArticle ? getLocalizedText(displayArticle.featuredImage?.alt, language) || title : '';
+  const featuredAlt = displayArticle
+    ? getLocalizedText(displayArticle.featuredImage?.alt, language) || title
+    : '';
   const bodyContent =
     displayArticle && typeof displayArticle.content === 'string'
       ? displayArticle.content
       : displayArticle?.content
-        ? (displayArticle.content as Record<string, string | undefined>)[lang] ||
-          (displayArticle.content as Record<string, string | undefined>).en ||
-          summary ||
-          ''
-        : summary || '';
+      ? (displayArticle.content as Record<string, string | undefined>)[lang] ||
+        (displayArticle.content as Record<string, string | undefined>).en ||
+        summary ||
+        ''
+      : summary || '';
 
   if (!displayArticle) {
     return (
@@ -74,22 +95,42 @@ export default function ArticlePage() {
             borderColor: readingMode ? alpha(theme.palette.primary.main, 0.15) : undefined,
           }}
         >
-          <Stack spacing={1.5} direction="row" flexWrap="wrap" alignItems="center" sx={{ color: 'text.secondary' }}>
+          <Stack
+            spacing={1.5}
+            direction="row"
+            flexWrap="wrap"
+            alignItems="center"
+            sx={{ color: 'text.secondary' }}
+          >
             <Chip
               label={categoryLabel}
               color="warning"
               size="small"
-              sx={{ fontWeight: 700, letterSpacing: 1, bgcolor: alpha(theme.palette.warning.main, 0.18) }}
+              sx={{
+                fontWeight: 700,
+                letterSpacing: 1,
+                bgcolor: alpha(theme.palette.warning.main, 0.18),
+              }}
             />
-            {displayArticle.publishedAt && <Typography variant="body2">{formatDate(displayArticle.publishedAt)}</Typography>}
+            {displayArticle.publishedAt && (
+              <Typography variant="body2">{formatDate(displayArticle.publishedAt)}</Typography>
+            )}
             {displayArticle.readingTime && (
               <Typography variant="body2">• {displayArticle.readingTime} min read</Typography>
             )}
             <Stack direction="row" spacing={1}>
-              <Button variant={lang === 'en' ? 'secondary' : 'outline'} size="small" onClick={() => setLang('en')}>
+              <Button
+                variant={lang === 'en' ? 'secondary' : 'outline'}
+                size="small"
+                onClick={() => setLang('en')}
+              >
                 EN
               </Button>
-              <Button variant={lang === 'bn' ? 'secondary' : 'outline'} size="small" onClick={() => setLang('bn')}>
+              <Button
+                variant={lang === 'bn' ? 'secondary' : 'outline'}
+                size="small"
+                onClick={() => setLang('bn')}
+              >
                 বাংলা
               </Button>
             </Stack>
@@ -132,7 +173,13 @@ export default function ArticlePage() {
                 boxShadow: 3,
               }}
             >
-              <Image src={featuredImage} alt={featuredAlt} fill className="object-cover" sizes="100vw" />
+              <Image
+                src={featuredImage}
+                alt={featuredAlt}
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
             </Box>
           )}
 

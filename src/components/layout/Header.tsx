@@ -28,6 +28,7 @@ import { useMenuCategories } from '@/hooks/api-hooks';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/Button';
 import { getLocalizedText } from '@/lib/utils';
+import { PLACEHOLDER_CATEGORIES } from '@/lib/placeholder-data';
 
 export function Header() {
   const { data: menu } = useMenuCategories();
@@ -47,8 +48,9 @@ export function Header() {
   };
 
   const navItems = useMemo(() => {
+    // Use API data if available, otherwise fall back to placeholder categories
     if (menu && menu.length > 0) return menu;
-    return [];
+    return PLACEHOLDER_CATEGORIES;
   }, [menu]);
   const dateline = useMemo(() => {
     const now = new Date();
@@ -81,7 +83,7 @@ export function Header() {
         bgcolor: 'primary.main',
         backgroundImage: `linear-gradient(125deg, ${alpha(
           theme.palette.primary.main,
-          0.95,
+          0.95
         )}, ${alpha(theme.palette.secondary.main, 0.9)})`,
         boxShadow: `0 12px 30px ${alpha(theme.palette.primary.main, 0.25)}`,
         backdropFilter: 'blur(14px)',
@@ -89,7 +91,7 @@ export function Header() {
       }}
     >
       <Toolbar disableGutters>
-        <Container maxWidth="lg" sx={{ py: 1 }}>
+        <Container maxWidth="xl" sx={{ py: 1 }}>
           <Stack spacing={1.5}>
             <Stack
               direction="row"
@@ -167,7 +169,11 @@ export function Header() {
                 </Stack>
               </Link>
 
-              <Box component="form" onSubmit={onSearch} sx={{ flex: 1, minWidth: { xs: '100%', md: 320 } }}>
+              <Box
+                component="form"
+                onSubmit={onSearch}
+                sx={{ flex: 1, minWidth: { xs: '100%', md: 320 } }}
+              >
                 <TextField
                   fullWidth
                   size="small"
@@ -262,7 +268,8 @@ export function Header() {
                     borderRadius: 2,
                     px: 2,
                     mx: 0.25,
-                    transition: 'box-shadow 200ms ease, background-color 200ms ease, color 150ms ease',
+                    transition:
+                      'box-shadow 200ms ease, background-color 200ms ease, color 150ms ease',
                     '&:hover': {
                       boxShadow: `0 0 14px ${alpha(theme.palette.secondary.light, 0.45)}`,
                       backgroundColor: alpha(theme.palette.secondary.main, 0.18),
@@ -280,11 +287,7 @@ export function Header() {
                 }}
               >
                 {navItems?.map((cat) => (
-                  <Tab
-                    key={cat.id}
-                    value={cat.slug}
-                    label={getLocalizedText(cat.name, language)}
-                  />
+                  <Tab key={cat.id} value={cat.slug} label={getLocalizedText(cat.name, language)} />
                 ))}
               </Tabs>
             ) : null}

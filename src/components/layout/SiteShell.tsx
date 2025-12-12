@@ -15,7 +15,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       }}
     >
       <Header />
-      <Container component="main" maxWidth="lg" sx={{ py: { xs: 4, md: 6 }, flex: 1 }}>
+      <Container component="main" maxWidth="xl" sx={{ py: { xs: 4, md: 6 }, flex: 1 }}>
         {children}
       </Container>
       <Footer />

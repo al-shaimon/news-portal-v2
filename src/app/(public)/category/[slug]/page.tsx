@@ -14,6 +14,7 @@ import { EmptyState } from '@/components/states/EmptyState';
 import { useCategory, useCategoryArticles } from '@/hooks/api-hooks';
 import { useLanguage } from '@/contexts/language-context';
 import { getLocalizedText } from '@/lib/utils';
+import { getCategoryBySlug, PLACEHOLDER_ARTICLES } from '@/lib/placeholder-data';
 
 export default function CategoryPage() {
   const params = useParams<{ slug: string }>();
@@ -27,8 +28,19 @@ export default function CategoryPage() {
     limit: 12,
   });
   const { language } = useLanguage();
-  const categoryData = category;
-  const articlesList = articles ?? [];
+
+  // Use placeholder data when API is unavailable
+  const placeholderCategory = getCategoryBySlug(slug);
+  const placeholderArticles = PLACEHOLDER_ARTICLES.filter((a) => a.category?.slug === slug)
+    .sort((a, b) => {
+      if (filter === 'featured') return (b.isFeatured ? 1 : 0) - (a.isFeatured ? 1 : 0);
+      if (filter === 'trending') return (b.isTrending ? 1 : 0) - (a.isTrending ? 1 : 0);
+      return new Date(b.publishedAt!).getTime() - new Date(a.publishedAt!).getTime();
+    })
+    .slice(0, 12);
+
+  const categoryData = category || placeholderCategory;
+  const articlesList = articles && articles.length > 0 ? articles : placeholderArticles;
   const categoryLabel = getLocalizedText(categoryData?.name, language) || 'Category';
   const categoryDescription = getLocalizedText(categoryData?.description, language);
 
@@ -38,7 +50,7 @@ export default function CategoryPage() {
       { key: 'featured', label: 'Featured' },
       { key: 'trending', label: 'Trending' },
     ],
-    [],
+    []
   );
 
   const selectFilter = (value: string) => {
@@ -50,7 +62,12 @@ export default function CategoryPage() {
   return (
     <Stack spacing={3}>
       <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, boxShadow: 3 }}>
-        <Chip label="Category" size="small" color="secondary" sx={{ mb: 1, fontWeight: 700, letterSpacing: 1 }} />
+        <Chip
+          label="Category"
+          size="small"
+          color="secondary"
+          sx={{ mb: 1, fontWeight: 700, letterSpacing: 1 }}
+        />
         <Typography variant="h3" sx={{ fontWeight: 800 }}>
           {categoryLabel}
         </Typography>
@@ -76,7 +93,10 @@ export default function CategoryPage() {
       <Grid container spacing={3}>
         <Grid size={{ xs: 12, lg: 8 }}>
           {articlesList.length === 0 ? (
-            <EmptyState title="No articles in this category yet" description="Please check back soon." />
+            <EmptyState
+              title="No articles in this category yet"
+              description="Please check back soon."
+            />
           ) : (
             <Grid container spacing={2.5}>
               {articlesList?.map((article) => (

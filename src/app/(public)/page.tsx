@@ -26,6 +26,14 @@ import {
   useTrendingArticles,
 } from '@/hooks/api-hooks';
 import { getLocalizedText } from '@/lib/utils';
+import {
+  PLACEHOLDER_CATEGORIES,
+  PLACEHOLDER_ARTICLES,
+  getFeaturedArticles,
+  getBreakingArticles,
+  getTrendingArticles,
+  getLatestArticles as getPlaceholderLatest,
+} from '@/lib/placeholder-data';
 
 export default function HomePage() {
   const { data: featured } = useFeaturedArticles();
@@ -34,11 +42,16 @@ export default function HomePage() {
   const { data: latest } = useLatestArticles();
   const { data: categories } = useMenuCategories();
   const { language } = useLanguage();
-  const categoryList = categories ?? [];
-  const latestList = latest ?? [];
-  const trendingList = trending ?? [];
-  const breakingTicker = breaking ?? [];
-  const heroSlides = (featured ?? []).slice(0, 4);
+
+  // Use placeholder data when API data is not available
+  const categoryList = categories && categories.length > 0 ? categories : PLACEHOLDER_CATEGORIES;
+  const latestList = latest && latest.length > 0 ? latest : getPlaceholderLatest(10);
+  const trendingList = trending && trending.length > 0 ? trending : getTrendingArticles(6);
+  const breakingTicker = breaking && breaking.length > 0 ? breaking : getBreakingArticles(5);
+  const heroSlides = (featured && featured.length > 0 ? featured : getFeaturedArticles(4)).slice(
+    0,
+    4
+  );
   const gridLatest = latestList.slice(0, 4);
   const stackedLatest = latestList.slice(4, 8);
   const trendingHighlights = trendingList.slice(0, 4);
@@ -56,14 +69,27 @@ export default function HomePage() {
   const secondCategorySlug = categoryList?.[1]?.slug;
   const { data: firstCategoryArticles } = useArticles(
     firstCategorySlug ? { category: firstCategorySlug, limit: 3 } : undefined,
-    { enabled: !!firstCategorySlug },
+    { enabled: !!firstCategorySlug }
   );
   const { data: secondCategoryArticles } = useArticles(
     secondCategorySlug ? { category: secondCategorySlug, limit: 3 } : undefined,
-    { enabled: !!secondCategorySlug },
+    { enabled: !!secondCategorySlug }
   );
-  const firstCategoryList = firstCategoryArticles ?? [];
-  const secondCategoryList = secondCategoryArticles ?? [];
+
+  // Use placeholder data for categories when API is unavailable
+  const getPlaceholderArticlesByCategory = (slug: string | undefined) => {
+    if (!slug) return [];
+    return PLACEHOLDER_ARTICLES.filter((a) => a.category?.slug === slug).slice(0, 4);
+  };
+
+  const firstCategoryList =
+    firstCategoryArticles && firstCategoryArticles.length > 0
+      ? firstCategoryArticles
+      : getPlaceholderArticlesByCategory(firstCategorySlug);
+  const secondCategoryList =
+    secondCategoryArticles && secondCategoryArticles.length > 0
+      ? secondCategoryArticles
+      : getPlaceholderArticlesByCategory(secondCategorySlug);
   const firstCategoryFeature = firstCategoryList[0];
   const firstCategoryRest = firstCategoryList.slice(1, 4);
   const secondCategoryGrid = secondCategoryList.slice(0, 4);
@@ -96,7 +122,10 @@ export default function HomePage() {
               overflow: 'hidden',
               minHeight: { xs: 240, md: 300 },
               backgroundImage: heroPoster
-                ? `linear-gradient(120deg, ${alpha('#000', 0.62)}, ${alpha('#000', 0.35)}), url(${heroPoster})`
+                ? `linear-gradient(120deg, ${alpha('#000', 0.62)}, ${alpha(
+                    '#000',
+                    0.35
+                  )}), url(${heroPoster})`
                 : undefined,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
@@ -115,11 +144,19 @@ export default function HomePage() {
                 04:12
               </Typography>
             </Stack>
-            <Typography variant="h5" sx={{ fontWeight: 900, maxWidth: '80%', textShadow: '0 6px 24px rgba(0,0,0,0.4)' }}>
+            <Typography
+              variant="h5"
+              sx={{ fontWeight: 900, maxWidth: '80%', textShadow: '0 6px 24px rgba(0,0,0,0.4)' }}
+            >
               {getArticleTitle(heroPrimary || heroSlides[0]) || 'Today’s briefing in 4 minutes'}
             </Typography>
             <Stack direction="row" spacing={1} flexWrap="wrap">
-              <Button variant="secondary" size="small" component={Link as unknown as 'a'} href={`/article/${heroPrimary?.slug || heroSlides[0]?.slug || '#'}`}>
+              <Button
+                variant="secondary"
+                size="small"
+                component={Link as unknown as 'a'}
+                href={`/article/${heroPrimary?.slug || heroSlides[0]?.slug || '#'}`}
+              >
                 Play now
               </Button>
               <Button
@@ -188,7 +225,7 @@ export default function HomePage() {
                   background: (theme) =>
                     `linear-gradient(180deg, ${alpha(theme.palette.secondary.main, 0.9)}, ${alpha(
                       theme.palette.primary.main,
-                      0.7,
+                      0.7
                     )})`,
                   transition: 'height 200ms ease',
                 },
@@ -200,7 +237,9 @@ export default function HomePage() {
                   component="div"
                   sx={{
                     height: `${30 + ((idx * 7) % 40)}%`,
-                    animation: audioPlaying ? `wavePulse 900ms ease-in-out ${idx * 0.02}s infinite alternate` : 'none',
+                    animation: audioPlaying
+                      ? `wavePulse 900ms ease-in-out ${idx * 0.02}s infinite alternate`
+                      : 'none',
                     '@keyframes wavePulse': {
                       from: { transform: 'scaleY(0.75)' },
                       to: { transform: 'scaleY(1.2)' },
@@ -242,13 +281,21 @@ export default function HomePage() {
                 Latest headlines
               </Typography>
               {latestList.length > 0 && (
-                <Button variant="ghost" size="small" component={Link as unknown as 'a'} href="/search?sort=date">
+                <Button
+                  variant="ghost"
+                  size="small"
+                  component={Link as unknown as 'a'}
+                  href="/search?sort=date"
+                >
                   See all
                 </Button>
               )}
             </Stack>
             {latestList.length === 0 ? (
-              <EmptyState title="No headlines yet" description="New stories will appear here once published." />
+              <EmptyState
+                title="No headlines yet"
+                description="New stories will appear here once published."
+              />
             ) : (
               <Grid container spacing={2.5}>
                 <Grid size={{ xs: 12, lg: 7 }}>
@@ -331,10 +378,15 @@ export default function HomePage() {
                 <Typography variant="h6" sx={{ fontWeight: 800 }}>
                   Trending now
                 </Typography>
-                {trendingHighlights.length > 0 && <Chip label="Live" color="warning" size="small" />}
+                {trendingHighlights.length > 0 && (
+                  <Chip label="Live" color="warning" size="small" />
+                )}
               </Stack>
               {trendingHighlights.length === 0 ? (
-                <EmptyState title="No trending stories" description="Check back soon for popular coverage." />
+                <EmptyState
+                  title="No trending stories"
+                  description="Check back soon for popular coverage."
+                />
               ) : (
                 <Stack spacing={2}>
                   {trendingHighlights.map((story, index) => (
@@ -503,7 +555,10 @@ export default function HomePage() {
         </Stack>
         {categoryList.length === 0 ? (
           <Box mt={2}>
-            <EmptyState title="No sections available" description="Add categories to populate this grid." />
+            <EmptyState
+              title="No sections available"
+              description="Add categories to populate this grid."
+            />
           </Box>
         ) : (
           <Grid container spacing={2} mt={1}>
@@ -529,7 +584,12 @@ export default function HomePage() {
                     },
                   }}
                 >
-                  <Stack direction="row" spacing={1} alignItems="center" sx={{ color: 'text.secondary' }}>
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    alignItems="center"
+                    sx={{ color: 'text.secondary' }}
+                  >
                     <Typography variant="overline" sx={{ letterSpacing: 3 }}>
                       {String(index + 1).padStart(2, '0')}
                     </Typography>
@@ -543,7 +603,10 @@ export default function HomePage() {
                       {getLocalizedText(category.description, language)}
                     </Typography>
                   )}
-                  <Typography variant="caption" sx={{ mt: 1, display: 'inline-block', letterSpacing: 2 }}>
+                  <Typography
+                    variant="caption"
+                    sx={{ mt: 1, display: 'inline-block', letterSpacing: 2 }}
+                  >
                     Enter →
                   </Typography>
                 </Paper>

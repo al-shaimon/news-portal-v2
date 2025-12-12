@@ -1,0 +1,339 @@
+[
+  {
+    "title": {
+      "en": "Tech Giants Announce Major AI Breakthrough in Healthcare",
+      "bn": "প্রযুক্তি দৈত্যরা স্বাস্থ্যসেবায় বড় এআই অগ্রগতি ঘোষণা করেছে"
+    },
+    "content": {
+      "en": "Leading technology companies have unveiled groundbreaking AI systems that can diagnose diseases with unprecedented accuracy. The new machine learning models have shown remarkable results in early detection of cancer, heart disease, and neurological conditions.\n\nExperts believe this breakthrough will revolutionize healthcare delivery, making diagnostic services more accessible and affordable globally. The AI systems have been trained on millions of medical records and imaging data, achieving accuracy rates exceeding 95% in clinical trials.",
+      "bn": "নেতৃস্থানীয় প্রযুক্তি কোম্পানিগুলো যুগান্তকারী এআই সিস্টেম উন্মোচন করেছে যা অভূতপূর্ব নির্ভুলতার সাথে রোগ নির্ণয় করতে পারে। নতুন মেশিন লার্নিং মডেলগুলো ক্যান্সার, হৃদরোগ এবং স্নায়বিক অবস্থার প্রাথমিক সনাক্তকরণে অসাধারণ ফলাফল দেখিয়েছে।"
+    },
+    "excerpt": {
+      "en": "Revolutionary AI technology promises to transform healthcare with accurate disease diagnosis and early detection capabilities.",
+      "bn": "বিপ্লবী এআই প্রযুক্তি সঠিক রোগ নির্ণয় এবং প্রাথমিক সনাক্তকরণ ক্ষমতা দিয়ে স্বাস্থ্যসেবায় রূপান্তরের প্রতিশ্রুতি দিচ্ছে।"
+    },
+    "category": "technology",
+    "featuredImage": {
+      "url": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800",
+      "alt": { "en": "AI Healthcare Technology", "bn": "এআই স্বাস্থ্যসেবা প্রযুক্তি" }
+    },
+    "tags": [
+      { "en": "AI", "bn": "এআই" },
+      { "en": "healthcare", "bn": "স্বাস্থ্যসেবা" },
+      { "en": "technology", "bn": "প্রযুক্তি" }
+    ],
+    "status": "published",
+    "isFeatured": true,
+    "isBreaking": true,
+    "isTrending": true,
+    "allowComments": true
+  },
+  {
+    "title": {
+      "en": "Global Stock Markets Rally on Economic Recovery Signs",
+      "bn": "অর্থনৈতিক পুনরুদ্ধারের লক্ষণে বৈশ্বিক শেয়ার বাজারে উত্থান"
+    },
+    "content": {
+      "en": "Major stock indices across the world have surged to record highs following positive economic indicators and corporate earnings reports. The Dow Jones, S&P 500, and NASDAQ all posted significant gains as investor confidence strengthens.\n\nAnalysts attribute the rally to improving employment figures, robust consumer spending, and successful monetary policies. Technology and financial sectors led the gains.",
+      "bn": "ইতিবাচক অর্থনৈতিক সূচক এবং কর্পোরেট আয়ের প্রতিবেদন অনুসরণ করে বিশ্বজুড়ে প্রধান শেয়ার সূচকগুলো রেকর্ড উচ্চতায় উঠেছে।"
+    },
+    "excerpt": {
+      "en": "Stock markets worldwide reach new peaks as economic indicators show strong recovery.",
+      "bn": "অর্থনৈতিক সূচক শক্তিশালী পুনরুদ্ধার প্রদর্শন করায় বিশ্বব্যাপী শেয়ার বাজার নতুন শিখরে।"
+    },
+    "category": "business",
+    "featuredImage": {
+      "url": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800",
+      "alt": { "en": "Stock Market Graph", "bn": "স্টক মার্কেট গ্রাফ" }
+    },
+    "tags": [
+      { "en": "stock market", "bn": "শেয়ার বাজার" },
+      { "en": "economy", "bn": "অর্থনীতি" }
+    ],
+    "status": "published",
+    "isFeatured": true,
+    "isBreaking": false,
+    "isTrending": true,
+    "allowComments": true
+  },
+  {
+    "title": {
+      "en": "Champions League Final Set for Epic Showdown",
+      "bn": "চ্যাম্পিয়ন্স লীগ ফাইনাল মহাকাব্যিক লড়াইয়ের জন্য প্রস্তুত"
+    },
+    "content": {
+      "en": "Football fans around the world are eagerly anticipating the Champions League final as two European giants prepare to face off. Both teams have shown exceptional form throughout the tournament, with star players delivering outstanding performances.\n\nThe final will be held at a packed stadium with millions watching globally.",
+      "bn": "বিশ্বজুড়ে ফুটবল ভক্তরা চ্যাম্পিয়ন্স লীগ ফাইনালের জন্য অধীর আগ্রহে অপেক্ষা করছেন।"
+    },
+    "excerpt": {
+      "en": "Two European football powerhouses prepare for an epic Champions League final showdown.",
+      "bn": "দুই ইউরোপীয় ফুটবল শক্তি একটি মহাকাব্যিক চ্যাম্পিয়ন্স লীগ ফাইনাল লড়াইয়ের জন্য প্রস্তুত।"
+    },
+    "category": "sports",
+    "featuredImage": {
+      "url": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800",
+      "alt": { "en": "Football Stadium", "bn": "ফুটবল স্টেডিয়াম" }
+    },
+    "tags": [
+      { "en": "football", "bn": "ফুটবল" },
+      { "en": "Champions League", "bn": "চ্যাম্পিয়ন্স লীগ" }
+    ],
+    "status": "published",
+    "isFeatured": true,
+    "isBreaking": true,
+    "isTrending": true,
+    "allowComments": true
+  },
+  {
+    "title": {
+      "en": "Hollywood Announces Blockbuster Film Lineup for 2026",
+      "bn": "হলিউড ২০২৬-এর জন্য ব্লকবাস্টার ফিল্ম লাইনআপ ঘোষণা"
+    },
+    "content": {
+      "en": "Major Hollywood studios have revealed their lineup of highly anticipated film projects for 2026, including adaptations of bestselling novels and beloved franchises. The announcements feature A-list actors and acclaimed directors.\n\nIndustry insiders predict these releases will dominate the box office.",
+      "bn": "প্রধান হলিউড স্টুডিওগুলো ২০২৬-এর জন্য তাদের অত্যন্ত প্রত্যাশিত চলচ্চিত্র প্রকল্পের লাইনআপ প্রকাশ করেছে।"
+    },
+    "excerpt": {
+      "en": "Studios unveil exciting 2026 film slate featuring major adaptations and star-studded casts.",
+      "bn": "স্টুডিওগুলো উত্তেজনাপূর্ণ ২০২৬ চলচ্চিত্র স্লেট উন্মোচন করেছে।"
+    },
+    "category": "entertainment",
+    "featuredImage": {
+      "url": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800",
+      "alt": { "en": "Movie Theater", "bn": "মুভি থিয়েটার" }
+    },
+    "tags": [
+      { "en": "movies", "bn": "সিনেমা" },
+      { "en": "Hollywood", "bn": "হলিউড" }
+    ],
+    "status": "published",
+    "isFeatured": false,
+    "isBreaking": false,
+    "isTrending": true,
+    "allowComments": true
+  },
+  {
+    "title": {
+      "en": "Scientists Discover Breakthrough in Climate Change Solution",
+      "bn": "বিজ্ঞানীরা জলবায়ু পরিবর্তনের সমাধানে যুগান্তকারী আবিষ্কার"
+    },
+    "content": {
+      "en": "International scientists have made a breakthrough discovery that could significantly impact efforts to combat climate change. The new carbon capture technology shows promise in removing greenhouse gases more efficiently.\n\nResearchers believe this innovation could be deployed globally within the next decade.",
+      "bn": "আন্তর্জাতিক বিজ্ঞানীদের একটি দল একটি যুগান্তকারী আবিষ্কার করেছে যা জলবায়ু পরিবর্তন মোকাবেলায় উল্লেখযোগ্য প্রভাব ফেলতে পারে।"
+    },
+    "excerpt": {
+      "en": "New carbon capture technology offers hope for reversing climate change impacts.",
+      "bn": "নতুন কার্বন ক্যাপচার প্রযুক্তি জলবায়ু পরিবর্তনের প্রভাব বিপরীত করার আশা প্রদান করে।"
+    },
+    "category": "environment",
+    "featuredImage": {
+      "url": "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800",
+      "alt": { "en": "Climate Science", "bn": "জলবায়ু বিজ্ঞান" }
+    },
+    "tags": [
+      { "en": "climate change", "bn": "জলবায়ু পরিবর্তন" },
+      { "en": "environment", "bn": "পরিবেশ" }
+    ],
+    "status": "published",
+    "isFeatured": true,
+    "isBreaking": true,
+    "isTrending": false,
+    "allowComments": true
+  },
+  {
+    "title": {
+      "en": "Revolutionary Cancer Treatment Shows 80% Success Rate",
+      "bn": "বিপ্লবী ক্যান্সার চিকিৎসা ৮০% সফলতার হার দেখায়"
+    },
+    "content": {
+      "en": "Medical researchers have announced remarkable results from clinical trials of a new cancer treatment that targets tumor cells with unprecedented precision. The therapy has shown success rates exceeding 80% in late-stage trials.\n\nThe treatment uses advanced immunotherapy techniques combined with personalized medicine approaches.",
+      "bn": "চিকিৎসা গবেষকরা একটি নতুন ক্যান্সার চিকিৎসার ক্লিনিক্যাল ট্রায়াল থেকে অসাধারণ ফলাফল ঘোষণা করেছেন।"
+    },
+    "excerpt": {
+      "en": "Groundbreaking cancer treatment achieves 80% success rate in trials.",
+      "bn": "যুগান্তকারী ক্যান্সার চিকিৎসা ট্রায়ালে ৮০% সফলতার হার অর্জন করেছে।"
+    },
+    "category": "health",
+    "featuredImage": {
+      "url": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800",
+      "alt": { "en": "Medical Research", "bn": "চিকিৎসা গবেষণা" }
+    },
+    "tags": [
+      { "en": "health", "bn": "স্বাস্থ্য" },
+      { "en": "cancer", "bn": "ক্যান্সার" }
+    ],
+    "status": "published",
+    "isFeatured": true,
+    "isBreaking": true,
+    "isTrending": true,
+    "allowComments": true
+  },
+  {
+    "title": {
+      "en": "Global Education Initiative Launches to Bridge Digital Divide",
+      "bn": "ডিজিটাল বিভাজন কমাতে বৈশ্বিক শিক্ষা উদ্যোগ চালু"
+    },
+    "content": {
+      "en": "A coalition of international organizations has launched an ambitious education initiative aimed at providing digital learning resources to underserved communities worldwide. The program will distribute tablets and establish internet connectivity.\n\nThe initiative targets reaching 50 million students within five years.",
+      "bn": "আন্তর্জাতিক সংস্থাগুলোর একটি জোট ডিজিটাল শিক্ষা সম্পদ সরবরাহের লক্ষ্যে একটি উচ্চাভিলাষী শিক্ষা উদ্যোগ চালু করেছে।"
+    },
+    "excerpt": {
+      "en": "Major education initiative aims to provide digital learning access to 50 million students.",
+      "bn": "প্রধান শিক্ষা উদ্যোগের লক্ষ্য ৫০ মিলিয়ন শিক্ষার্থীর কাছে ডিজিটাল শিক্ষা অ্যাক্সেস প্রদান করা।"
+    },
+    "category": "education",
+    "featuredImage": {
+      "url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800",
+      "alt": { "en": "Digital Education", "bn": "ডিজিটাল শিক্ষা" }
+    },
+    "tags": [
+      { "en": "education", "bn": "শিক্ষা" },
+      { "en": "digital divide", "bn": "ডিজিটাল বিভাজন" }
+    ],
+    "status": "published",
+    "isFeatured": false,
+    "isBreaking": false,
+    "isTrending": true,
+    "allowComments": true
+  },
+  {
+    "title": {
+      "en": "Startup Revolutionizes Renewable Energy Storage",
+      "bn": "স্টার্টআপ পুনর্নবীকরণযোগ্য শক্তি সঞ্চয়ে বিপ্লব ঘটায়"
+    },
+    "content": {
+      "en": "A technology startup has developed a revolutionary battery system that can store renewable energy at unprecedented efficiency levels. The innovation addresses one of the biggest challenges in transitioning to clean energy.\n\nThe company has secured major funding and plans to scale production rapidly.",
+      "bn": "একটি প্রযুক্তি স্টার্টআপ একটি বিপ্লবী ব্যাটারি সিস্টেম তৈরি করেছে যা অভূতপূর্ব দক্ষতার স্তরে পুনর্নবীকরণযোগ্য শক্তি সংরক্ষণ করতে পারে।"
+    },
+    "excerpt": {
+      "en": "New battery technology breakthrough promises to solve renewable energy storage challenges.",
+      "bn": "নতুন ব্যাটারি প্রযুক্তি অগ্রগতি পুনর্নবীকরণযোগ্য শক্তি সঞ্চয় চ্যালেঞ্জ সমাধানের প্রতিশ্রুতি দেয়।"
+    },
+    "category": "technology",
+    "featuredImage": {
+      "url": "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800",
+      "alt": { "en": "Energy Storage", "bn": "শক্তি সঞ্চয়" }
+    },
+    "tags": [
+      { "en": "renewable energy", "bn": "পুনর্নবীকরণযোগ্য শক্তি" },
+      { "en": "technology", "bn": "প্রযুক্তি" }
+    ],
+    "status": "published",
+    "isFeatured": false,
+    "isBreaking": true,
+    "isTrending": true,
+    "allowComments": true
+  },
+  {
+    "title": {
+      "en": "Major Tech Company Reports Record-Breaking Quarterly Earnings",
+      "bn": "প্রধান প্রযুক্তি কোম্পানি রেকর্ড-ব্রেকিং ত্রৈমাসিক আয় রিপোর্ট করেছে"
+    },
+    "content": {
+      "en": "A leading technology company has reported unprecedented quarterly earnings, surpassing analyst expectations by a significant margin. The company attributed the success to strong cloud services growth and AI product launches.\n\nInvestors responded enthusiastically, pushing the stock to new all-time highs.",
+      "bn": "একটি নেতৃস্থানীয় প্রযুক্তি কোম্পানি অভূতপূর্ব ত্রৈমাসিক আয় রিপোর্ট করেছে, বিশ্লেষক প্রত্যাশা উল্লেখযোগ্য ব্যবধানে অতিক্রম করেছে।"
+    },
+    "excerpt": {
+      "en": "Tech giant exceeds expectations with record quarterly performance driven by AI and cloud growth.",
+      "bn": "প্রযুক্তি দৈত্য এআই এবং ক্লাউড বৃদ্ধি দ্বারা চালিত রেকর্ড ত্রৈমাসিক কর্মক্ষমতা সহ প্রত্যাশা অতিক্রম করেছে।"
+    },
+    "category": "business",
+    "featuredImage": {
+      "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+      "alt": { "en": "Business Growth", "bn": "ব্যবসা বৃদ্ধি" }
+    },
+    "tags": [
+      { "en": "earnings", "bn": "আয়" },
+      { "en": "technology", "bn": "প্রযুক্তি" }
+    ],
+    "status": "published",
+    "isFeatured": false,
+    "isBreaking": false,
+    "isTrending": true,
+    "allowComments": true
+  },
+  {
+    "title": {
+      "en": "Olympic Games Preview: Athletes Ready for Historic Competition",
+      "bn": "অলিম্পিক গেমস প্রিভিউ: ক্রীড়াবিদরা ঐতিহাসিক প্রতিযোগিতার জন্য প্রস্তুত"
+    },
+    "content": {
+      "en": "Athletes from around the world are gathering for what promises to be one of the most competitive Olympic Games in history. New records are expected across multiple disciplines as training methods and technology continue to advance.\n\nThe opening ceremony will showcase the host nation's culture and heritage.",
+      "bn": "বিশ্বব্যাপী ক্রীড়াবিদরা ইতিহাসের সবচেয়ে প্রতিযোগিতামূলক অলিম্পিক গেমসগুলির একটির প্রতিশ্রুতির জন্য জড়ো হচ্ছে।"
+    },
+    "excerpt": {
+      "en": "Global athletes prepare for highly anticipated Olympic Games with record-breaking performances expected.",
+      "bn": "বৈশ্বিক ক্রীড়াবিদরা রেকর্ড-ব্রেকিং পারফরম্যান্স প্রত্যাশিত অত্যন্ত প্রত্যাশিত অলিম্পিক গেমসের জন্য প্রস্তুতি নিচ্ছে।"
+    },
+    "category": "sports",
+    "featuredImage": {
+      "url": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800",
+      "alt": { "en": "Olympic Sports", "bn": "অলিম্পিক ক্রীড়া" }
+    },
+    "tags": [
+      { "en": "Olympics", "bn": "অলিম্পিক" },
+      { "en": "sports", "bn": "ক্রীড়া" }
+    ],
+    "status": "published",
+    "isFeatured": false,
+    "isBreaking": false,
+    "isTrending": false,
+    "allowComments": true
+  },
+  {
+    "title": {
+      "en": "Streaming Platform Announces Original Series Lineup",
+      "bn": "স্ট্রিমিং প্ল্যাটফর্ম মূল সিরিজ লাইনআপ ঘোষণা করেছে"
+    },
+    "content": {
+      "en": "A major streaming service has unveiled its slate of original programming for the upcoming year, featuring acclaimed directors and A-list talent. The lineup includes diverse genres from drama to comedy to documentary.\n\nIndustry analysts predict the releases will drive significant subscriber growth.",
+      "bn": "একটি প্রধান স্ট্রিমিং পরিষেবা আসন্ন বছরের জন্য তার মূল প্রোগ্রামিং এর স্লেট উন্মোচন করেছে।"
+    },
+    "excerpt": {
+      "en": "Major streaming service reveals exciting lineup of original content featuring top talent.",
+      "bn": "প্রধান স্ট্রিমিং পরিষেবা শীর্ষ প্রতিভা সমন্বিত মূল কন্টেন্টের উত্তেজনাপূর্ণ লাইনআপ প্রকাশ করে।"
+    },
+    "category": "entertainment",
+    "featuredImage": {
+      "url": "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800",
+      "alt": { "en": "Streaming Entertainment", "bn": "স্ট্রিমিং বিনোদন" }
+    },
+    "tags": [
+      { "en": "streaming", "bn": "স্ট্রিমিং" },
+      { "en": "entertainment", "bn": "বিনোদন" }
+    ],
+    "status": "published",
+    "isFeatured": false,
+    "isBreaking": false,
+    "isTrending": false,
+    "allowComments": true
+  },
+  {
+    "title": {
+      "en": "Government Announces Major Political Reform Package",
+      "bn": "সরকার প্রধান রাজনৈতিক সংস্কার প্যাকেজ ঘোষণা করেছে"
+    },
+    "content": {
+      "en": "The government has unveiled a comprehensive political reform package aimed at strengthening democratic institutions and improving governance. The reforms include electoral system changes, transparency measures, and anti-corruption initiatives.\n\nPolitical analysts describe the package as a significant step toward modernizing the political system.",
+      "bn": "সরকার গণতান্ত্রিক প্রতিষ্ঠান শক্তিশালী এবং শাসন উন্নত করার লক্ষ্যে একটি ব্যাপক রাজনৈতিক সংস্কার প্যাকেজ উন্মোচন করেছে।"
+    },
+    "excerpt": {
+      "en": "Comprehensive reform package targets democratic strengthening and improved governance.",
+      "bn": "ব্যাপক সংস্কার প্যাকেজ গণতান্ত্রিক শক্তিশালীকরণ এবং উন্নত শাসন লক্ষ্য করে।"
+    },
+    "category": "politics",
+    "featuredImage": {
+      "url": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800",
+      "alt": { "en": "Political Reform", "bn": "রাজনৈতিক সংস্কার" }
+    },
+    "tags": [
+      { "en": "politics", "bn": "রাজনীতি" },
+      { "en": "reform", "bn": "সংস্কার" }
+    ],
+    "status": "published",
+    "isFeatured": false,
+    "isBreaking": true,
+    "isTrending": true,
+    "allowComments": true
+  }
+]
